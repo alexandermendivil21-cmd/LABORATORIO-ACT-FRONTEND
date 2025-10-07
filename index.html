@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACT Clínica | Atención médica integral</title>
+  <meta name="description" content="ACT Clínica ofrece atención médica integral, resultados en línea, citas online y telemedicina con profesionales de confianza.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="./Assets/Style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <a href="index.html"><h1>ACT Clínica</h1></a>
+      </div>
+      <ul class="menu">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero con Parallax -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container" data-aos="fade-up" data-aos-duration="1200">
+      <h2>Tu salud, nuestra prioridad</h2>
+      <p>Atención integral con especialistas certificados: consulta médica, laboratorio y telemedicina.</p>
+      <a href="login.html" class="btn-cta"><i class="fas fa-calendar-check"></i> Reserva tu cita en 1 minuto</a>
+    </div>
+  </section>
+
+  <script>
+  const hero = document.querySelector('.hero');
+  const images = [
+    "https://images.stockcake.com/public/f/b/c/fbc79673-2ef9-437c-8436-76cb2faed213_large/doctor-consultation-meeting-stockcake.jpg",
+    "https://escuelafarmacia.com/wp-content/uploads/analisis-clinicos.jpg",
+    "https://labos.co/wp-content/uploads/2024/05/Microscope.webp",
+    "https://cdn.getmidnight.com/f0f4b6598f2cee45644673998b4f44be/2025/04/disenos-de-recepcion-para-tu-clinica-con-area-infantil.webp"
+  ];
+
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url(${images[index]})`;
+    hero.style.transition = "background-image 1s ease-in-out";
+  }, 5000); // cambia cada 5s
+</script>
+
+  <!-- Servicios -->
+  <section id="servicios" class="services container" data-aos="fade-up" data-aos-duration="1200">
+    <h3 class="section-title">Nuestros servicios</h3>
+    <div class="service-grid">
+      <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
+        <div class="circle"><i class="fas fa-user-md fa-2x"></i></div>
+        <h4>Consulta médica</h4>
+        <p>Atención en múltiples especialidades con médicos certificados.</p>
+      </div>
+      <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
+        <div class="circle"><i class="fas fa-vials fa-2x"></i></div>
+        <h4>Resultados Online</h4>
+        <p>Accede a tus análisis clínicos desde cualquier lugar.</p>
+      </div>
+      <div class="service-item" data-aos="zoom-in" data-aos-delay="300">
+        <div class="circle"><i class="fas fa-calendar-check fa-2x"></i></div>
+        <h4>Citas Online</h4>
+        <p>Agenda fácilmente tu consulta desde la web.</p>
+      </div>
+      <div class="service-item" data-aos="zoom-in" data-aos-delay="400">
+        <div class="circle"><i class="fas fa-video fa-2x"></i></div>
+        <h4>Telemedicina</h4>
+        <p>Recibe orientación médica en línea de forma segura.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros -->
+  <section id="nosotros" class="about container" data-aos="fade-up" data-aos-duration="1200">
+    <div class="about-grid">
+      <div class="about-text">
+        <h3 class="section-title">Sobre nosotros</h3>
+        <p>En ACT Clínica nos comprometemos a brindar un servicio humano, moderno y accesible. Nuestro equipo de especialistas está listo para atenderte con la mejor tecnología médica.</p>
+        <a href="#contacto" class="btn-cta">Conócenos más</a>
+      </div>
+      <div class="about-img">
+        <img src="https://www.elationhealth.com/wp-content/uploads/2018/10/iStock-855467422-1024x683.jpg" alt="Equipo médico de ACT Clínica">
+      </div>
+    </div>
+  </section>
+
+  <!-- Estadísticas animadas -->
+  <section id="stats" class="stats container" data-aos="fade-up" data-aos-duration="1200">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="counter" data-target="5000">0</span>
+        <p>Pacientes atendidos</p>
+      </div>
+      <div class="stat">
+        <span class="counter" data-target="20">0</span>
+        <p>Especialistas</p>
+      </div>
+      <div class="stat">
+        <span class="counter" data-target="15">0</span>
+        <p>Años de experiencia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrusel de testimonios -->
+  <section id="testimonios" class="testimonials container" data-aos="fade-up" data-aos-duration="1200">
+    <h3 class="section-title">Testimonios</h3>
+    <div class="testimonial-slider">
+      <div class="testimonial-item">
+        <blockquote>
+          "Excelente atención y resultados rápidos, me sentí en buenas manos."  
+          <cite>- María G.</cite>
+        </blockquote>
+      </div>
+      <div class="testimonial-item">
+        <blockquote>
+          "La telemedicina me permitió resolver mi consulta sin salir de casa."  
+          <cite>- Juan P.</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact container" data-aos="fade-up" data-aos-duration="1200">
+    <h3 class="section-title">Contáctanos</h3>
+    <form class="contact-form">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit" class="btn-cta">Enviar mensaje</button>
+    </form>
+    <p>Email: contacto@actclinica.com | Tel: (01) 555-1234</p>
+    <div class="socials">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer container">
+    <p>&copy; 2025 ACT Clínica - Todos los derechos reservados</p>
+    <ul class="footer-menu">
+      <li><a href="#">Privacidad</a></li>
+      <li><a href="#">Términos</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </footer>
+
+  <!-- Botones flotantes -->
+  <a href="https://wa.me/51999999999" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="login.html" class="reserve-btn">
+    <i class="fas fa-calendar-check"></i> Reservar Cita
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="Scripts/mainLanding.js"></script>
+  <script>
+    AOS.init({once:true});
+
+    // Contadores animados
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / 200;
+        if(count < target){
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+
+    // Testimonial slider simple
+    const slides = document.querySelectorAll('.testimonial-item');
+    let current = 0;
+    setInterval(() => {
+      slides.forEach((s, i) => s.style.display = i === current ? 'block' : 'none');
+      current = (current + 1) % slides.length;
+    }, 5000);
+  </script>
+</body>
+</html>

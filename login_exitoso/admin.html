@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usuarios</title>
+  <link rel="stylesheet" href="../Assets/admin.css" />
+
+  <script src="/public/admin.js" defer></script>
+
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="menu">
+        <a href="#">Usuarios</a>
+        <a href="#">Pacientes</a>
+        <a href="#">Citas</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <div class="header">
+        <h1>Gestionar Usuarios</h1>
+        <button id="btn-add" class="btn btn-add">Agregar usuario</button>
+      </div>
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Género</th>
+            <th>Dirección</th>
+            <th>Celular</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="user-tbody">
+          <!-- Renglones generados por JS -->
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <!-- Modal Crear/Editar -->
+  <div id="modal-form" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">Agregar usuario</h2>
+      <form id="form-user">
+        <input type="hidden" id="user-id" />
+        <div class="form-group">
+          <label for="first-name">Nombres</label>
+          <input type="text" id="first-name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Apellidos</label>
+          <input type="text" id="last-name" required />
+        </div>
+        <div class="form-group">
+          <label for="age">Edad</label>
+          <input type="number" id="age" min="0" required />
+        </div>
+        <div class="form-group">
+          <label for="gender">Género</label>
+          <select id="gender" required>
+            <option value="">Selecciona...</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="address">Dirección</label>
+          <input type="text" id="address" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Celular</label>
+          <input
+            type="tel"
+            id="phone"
+            pattern="[0-9]{9,15}"
+            placeholder="999555444"
+            required
+          />
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" id="btn-cancel" class="btn btn-secondary">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Confirmar Eliminación -->
+  <div id="modal-delete" class="modal hidden">
+    <div class="modal-content">
+      <h2>Confirmar eliminación</h2>
+      <p>¿Estás seguro de eliminar este usuario?</p>
+      <div class="modal-actions">
+        <button id="btn-confirm-delete" class="btn btn-danger">
+          Eliminar
+        </button>
+        <button id="btn-cancel-delete" class="btn btn-secondary">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
