@@ -1,119 +1,36 @@
 <section class="resultados">
   <!-- Encabezado -->
   <div class="section-header">
-    <h1>Resultados de Laboratorio</h1>
-    <p class="muted">Consulta tus últimos análisis de forma clara y organizada.</p>
+    <h1 class="page-title">Selecciona Pruebas</h1>
+    <p class="muted">Gestiona y revisa tus resultados de laboratorio.</p>
   </div>
 
-  <!-- Resumen del análisis -->
-  <div class="card resumen">
-    <h3>Último análisis registrado</h3>
-    <div class="resumen-datos">
-      <p><strong>Examen:</strong> Perfil lipídico</p>
-      <p><strong>Fecha:</strong> 20 Sep 2025</p>
-      <p><strong>Estado:</strong> 
-        <span class="chip normal" role="status" aria-live="polite">
-          ✅ Normal
-        </span>
-      </p>
-    </div>
-  </div>
-
-  <!-- Tablas de resultados -->
-  <div class="grid grid-2">
-    <!-- Bioquímica -->
-    <div class="card">
-      <h3><i class="fa-solid fa-flask"></i> Bioquímica</h3>
-      <div class="table-wrapper">
-        <table class="tabla-resultados" aria-labelledby="bioquimica-section">
-          <thead>
-            <tr>
-              <th scope="col">Prueba</th>
-              <th scope="col">Resultado</th>
-              <th scope="col">Unidad</th>
-              <th scope="col">Rango</th>
-              <th scope="col">Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Glucosa</td>
-              <td>92</td>
-              <td>mg/dL</td>
-              <td>70 - 110</td>
-              <td><span class="chip normal">✅ En rango</span></td>
-            </tr>
-            <tr class="alerta">
-              <td>Colesterol</td>
-              <td>220</td>
-              <td>mg/dL</td>
-              <td>&lt; 200</td>
-              <td><span class="chip alerta">⚠ Alto</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Hematología -->
-    <div class="card">
-      <h3><i class="fa-solid fa-droplet"></i> Hematología</h3>
-      <div class="table-wrapper">
-        <table class="tabla-resultados" aria-labelledby="hematologia-section">
-          <thead>
-            <tr>
-              <th scope="col">Prueba</th>
-              <th scope="col">Resultado</th>
-              <th scope="col">Unidad</th>
-              <th scope="col">Rango</th>
-              <th scope="col">Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Hemoglobina</td>
-              <td>14.2</td>
-              <td>g/dL</td>
-              <td>12 - 16</td>
-              <td><span class="chip normal">✅ En rango</span></td>
-            </tr>
-            <tr>
-              <td>Hematocrito</td>
-              <td>42</td>
-              <td>%</td>
-              <td>36 - 46</td>
-              <td><span class="chip normal">✅ En rango</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Gráfico comparativo -->
+  <!-- Card con tabla de pruebas -->
   <div class="card">
-    <h3><i class="fa-solid fa-chart-line"></i> Evolución de resultados</h3>
-<div class="chart-container">
-  <canvas id="resultadosChart"></canvas>
-</div>
+    <h2 class="card-title">Mostrando Pruebas</h2>
+    
+    <div class="table-wrapper">
+      <table class="tabla-pruebas" aria-label="Lista de pruebas de laboratorio">
+        <thead>
+          <tr>
+            <th scope="col">Tipo de Examen</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="pruebas-tbody">
+          <!-- Las pruebas se cargarán dinámicamente desde JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  const ctx = document.getElementById('resultadosChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['Jun', 'Jul', 'Ago', 'Sep', 'Oct'],
-      datasets: [{
-        label: 'Glucosa',
-        data: [95, 88, 102, 92, 98],
-        borderColor: '#1976D2',
-        backgroundColor: 'rgba(25,118,210,0.2)',
-        fill: true,
-        tension: 0.3
-      }]
-    },
-    options: { responsive: true }
-  });
-</script>
-
+  <!-- Botón para volver al inicio -->
+  <div class="actions-footer">
+    <button class="btn btn-outline" onclick="window.location.hash = '#overview'">
+      <i class="fa-solid fa-arrow-left"></i>
+      Volver al Inicio
+    </button>
+  </div>
+</section>
